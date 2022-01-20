@@ -1,25 +1,25 @@
 {
-    "name": "rubenromao/mage2module-UncancelOrder",
-    "description": "Magento to Uncancel Cancelled Orders in M2.3.2",
+    "name": "rubenromao/un-cancel-order",
+    "description": "Magento 2.3 module to Un-Cancel Cancelled Orders.",
     "type": "magento2-module",
-    "repositories": {
-        "magento": {
-            "type": "composer",
-            "url": "https://repo.magento.com/"
+    "authors": [
+        {
+            "name":"Ruben Romao",
+            "email": "rubenromao@gmail.com"
         }
-    },
+    ],
     "require": {
-        "magento/framework": "102.0.4",
-        "magento/module-backend": "101.0.4",
-        "magento/module-admin-notification": "100.3.4",
-        "magento/module-release-notification": "100.3.4"
+        "magento/framework": "^102.0.2",
+        "magento/module-backend": "^101.0.2",
+        "magento/module-catalog-inventory": "^100.3.2",
+        "magento/module-sales": "^100.0.2"
     },
     "autoload": {
         "files": [
             "registration.php"
         ],
         "psr-4": {
-            "RubenRomao\\UncancelOrder\\": ""
+            "RubenRomao\\UnCancelOrder\\": ""
         }
     }
 }
