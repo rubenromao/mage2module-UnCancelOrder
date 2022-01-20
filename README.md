@@ -6,9 +6,9 @@ This extension will give you the option to process a canceled order by setting i
 Installation
 ====
 
-This package is registered on [Packagist](https://packagist.org/packages/RubenRomao/UnCancelOrder) for easy installation. In your Magento installation root run:
+This package is registered on [Packagist](https://packagist.org/packages/rubenromao/un-cancel-order) for easy installation. In your Magento installation root run:
 
-`composer require RubenRomao/UnCancelOrder`
+`composer require rubenromao/un-cancel-order`
 
 This will install the latest version in your Magento installation, when completed run:
 
