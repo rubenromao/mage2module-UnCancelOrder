@@ -38,7 +38,7 @@ class Uncancel extends Action
     /**
      * {@inheritdoc}
      */
-    protected function isAllowed()
+    protected function _isAllowed()
     {
         return $this->authorization->isAllowed('RubenRomao_UnCancelOrder::uncancel');
     }
@@ -48,7 +48,7 @@ class Uncancel extends Action
      *
      * @return Redirect
      */
-    public function execute()
+    public function execute(): Redirect
     {
         // check if we know what should be deleted
         $id = $this->getRequest()->getParam('order_id');
@@ -70,9 +70,11 @@ class Uncancel extends Action
             // display error message
             $this->messageManager->addError(__('Unable to un-cancel the order!'));
         }
+
         // go to order view page
         /** @var Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
+
         return $resultRedirect->setPath('sales/order/view', ['order_id' => $id]);
     }
 }

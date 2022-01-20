@@ -46,7 +46,6 @@ class Context
         Registry     $coreRegistry,
         CoreClass    $context,
         UrlInterface $urlBuilder
-
     ) {
         $this->coreRegistry = $coreRegistry;
         $this->context = $context;

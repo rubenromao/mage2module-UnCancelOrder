@@ -10,9 +10,9 @@ declare(strict_types=1);
 namespace RubenRomao\UnCancelOrder\Model;
 
 use Magento\Framework\Exception\LocalizedException;
-use Magento\Sales\Model\Order as SalesOrder;
+use Magento\Sales\Model\Order as CoreOrder;
 
-class Order extends SalesOrder
+class Order extends CoreOrder
 {
     const STATE_PROCESSING = 'processing';
 
