@@ -1,6 +1,6 @@
 {
-    "name": "rubenromao/test2",
-    "description": "Magento test2",
+    "name": "rubenromao/mage2module-UncancelOrder",
+    "description": "Magento to Uncancel Cancelled Orders in M2.3.2",
     "type": "magento2-module",
     "repositories": {
         "magento": {
@@ -19,7 +19,7 @@
             "registration.php"
         ],
         "psr-4": {
-            "RubenRomao\\Test2\\": ""
+            "RubenRomao\\UncancelOrder\\": ""
         }
     }
 }
