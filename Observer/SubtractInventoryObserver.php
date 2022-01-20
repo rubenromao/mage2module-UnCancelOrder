@@ -35,6 +35,7 @@ class SubtractInventoryObserver implements ObserverInterface
 
     /**
      * SubtractInventoryObserver constructor.
+     * 
      * @param StockManagementInterface $stockManagement
      * @param StockProcessor $stockIndexerProcessor
      * @param LoggerInterface $logger

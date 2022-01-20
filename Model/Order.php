@@ -14,8 +14,6 @@ use Magento\Sales\Model\Order as CoreOrder;
 
 class Order extends CoreOrder
 {
-    const STATE_PROCESSING = 'processing';
-
     /**
      * @param string $comment
      * @param bool $graceful
@@ -74,6 +72,7 @@ class Order extends CoreOrder
         } elseif (!$graceful) {
             throw new LocalizedException(__('We cannot un-cancel this order.'));
         }
+
         return $this;
     }
 }

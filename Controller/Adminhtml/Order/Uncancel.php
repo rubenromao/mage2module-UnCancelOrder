@@ -38,7 +38,7 @@ class Uncancel extends Action
     /**
      * {@inheritdoc}
      */
-    protected function _isAllowed()
+    protected function _isAllowed(): bool
     {
         return $this->authorization->isAllowed('RubenRomao_UnCancelOrder::uncancel');
     }
@@ -74,7 +74,6 @@ class Uncancel extends Action
         // go to order view page
         /** @var Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
-
         return $resultRedirect->setPath('sales/order/view', ['order_id' => $id]);
     }
 }
