@@ -18,8 +18,6 @@ use Magento\Framework\UrlInterface;
 class Context
 {
     /**
-     * Core registry
-     *
      * @var Registry
      */
     private $coreRegistry = null;
@@ -36,15 +34,12 @@ class Context
 
     /**
      * @param Registry $coreRegistry
-     *
      * @param CoreClass $context
      * @param UrlInterface $urlBuilder
-     * @SuppressWarnings(PHPMD.ExcessiveParameterList)
-     * @SuppressWarnings(PHPMD.CouplingBetweenObjects)
      */
     public function __construct(
-        Registry     $coreRegistry,
-        CoreClass    $context,
+        Registry $coreRegistry,
+        CoreClass $context,
         UrlInterface $urlBuilder
     ) {
         $this->coreRegistry = $coreRegistry;
@@ -55,11 +50,12 @@ class Context
     /**
      * @param CoreBlockWidgetContext $subject
      * @param ButtonList $buttonList
-     *
      * @return ButtonList
      */
-    public function afterGetButtonList(CoreBlockWidgetContext $subject, ButtonList $buttonList): ButtonList
-    {
+    public function afterGetButtonList(
+        CoreBlockWidgetContext $subject,
+        ButtonList $buttonList
+    ): ButtonList {
         $request = $this->context->getRequest();
 
         if ($request->getFullActionName() == 'sales_order_view') {
@@ -80,7 +76,7 @@ class Context
     }
 
     /**
-     * @return mixed
+     * @return mixed|null
      */
     public function getOrder()
     {
@@ -90,7 +86,7 @@ class Context
     /**
      * @return string
      */
-    public function getUnCancelUrl()
+    public function getUnCancelUrl(): string
     {
         return $this->urlBuilder->getUrl('*/*/uncancel', ['order_id'=>$this->getOrder()->getId()]);
     }
