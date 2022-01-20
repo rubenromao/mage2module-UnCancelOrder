@@ -4,6 +4,6 @@ use Magento\Framework\Component\ComponentRegistrar;
 
 ComponentRegistrar::register(
     ComponentRegistrar::MODULE,
-    'RubenRomao_Test2',
+    'RubenRomao_UncancelOrder',
     __DIR__
 );
