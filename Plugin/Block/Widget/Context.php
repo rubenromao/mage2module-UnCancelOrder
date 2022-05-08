@@ -15,22 +15,25 @@ use Magento\Framework\App\Action\Context as CoreClass;
 use Magento\Framework\Registry;
 use Magento\Framework\UrlInterface;
 
+/**
+ * Add button to Un-Cancel the Cancelled Order.
+ */
 class Context
 {
     /**
      * @var Registry
      */
-    private $coreRegistry = null;
+    protected $coreRegistry = null;
 
     /**
      * @var CoreClass
      */
-    private $context = null;
+    protected $context = null;
 
     /**
      * @var UrlInterface
      */
-    private $urlBuilder;
+    protected $urlBuilder;
 
     /**
      * @param Registry $coreRegistry
@@ -78,7 +81,7 @@ class Context
     /**
      * @return mixed|null
      */
-    public function getOrder()
+    public function getOrder(): mixed
     {
         return $this->coreRegistry->registry('sales_order');
     }
