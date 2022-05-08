@@ -16,22 +16,31 @@ use Magento\CatalogInventory\Model\Indexer\Stock\Processor as StockProcessor;
 use Magento\Framework\Event\Observer as EventObserver;
 use Psr\Log\LoggerInterface;
 
+/**
+ * Observer to subtract the items' quantities
+ * from the stock for the related un-cancelled order products.
+ */
 class SubtractInventoryObserver implements ObserverInterface
 {
     /**
      * @var StockManagementInterface
      */
-    private $stockManagement;
+    protected $stockManagement;
 
     /**
      * @var ItemsForReindex
      */
-    private $itemsForReindex;
+    protected $itemsForReindex;
 
     /**
      * @var LoggerInterface
      */
-    private $logger;
+    protected $logger;
+
+    /**
+     * @var StockProcessor
+     */
+    protected $stockIndexerProcessor;
 
     /**
      * SubtractInventoryObserver constructor.
@@ -51,12 +60,12 @@ class SubtractInventoryObserver implements ObserverInterface
     }
 
     /**
-     * Subtract items qtys from stock related with uncancel products.
+     * Subtract items qtys from stock related with uncancel order products.
      *
      * @param EventObserver $observer
      * @return $this
      */
-    public function execute(EventObserver $observer)
+    public function execute(EventObserver $observer): static
     {
         $order = $observer->getEvent()->getOrder();
         $productQty = $observer->getEvent()->getProductQty();

@@ -14,12 +14,20 @@ use Magento\Backend\App\Action\Context;
 use Magento\Backend\Model\View\Result\Redirect;
 use RubenRomao\UnCancelOrder\Model\OrderFactory;
 
+/**
+ * Controller that triggers the Un-Cancel Order class method.
+ */
 class Uncancel extends Action
 {
     /**
      * @var OrderFactory
      */
-    private $demoFactory;
+    protected $demoFactory;
+
+    /**
+     * @var OrderFactory
+     */
+    protected $orderFactory;
 
     /**
      * Initialize Group Controller

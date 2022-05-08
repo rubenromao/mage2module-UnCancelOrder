@@ -12,6 +12,10 @@ namespace RubenRomao\UnCancelOrder\Model;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Sales\Model\Order as CoreOrder;
 
+/**
+ * Extending Magento Core Order Model
+ * to Add the ability to un-cancel a cancelled order.
+ */
 class Order extends CoreOrder
 {
     /**
@@ -21,7 +25,7 @@ class Order extends CoreOrder
      * @return $this
      * @throws LocalizedException
      */
-    public function uncancel($comment = '', $graceful = true)
+    public function uncancel($comment = '', $graceful = true): Order
     {
         if ($this->isCanceled()) {
             $state = self::STATE_PROCESSING;
